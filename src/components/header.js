@@ -1,31 +1,21 @@
-import React,{ Component } from 'react'
+import React from 'react'
 // Destructuring with  {} helps create a new variable for React.Component => Component
 
 // class based component
-class Header extends Component {
+const Header = (props) => {
 
-    state = {
-        keywords: ''
-    }
+    return (
+        <header>
+            <div className='logo' >BATTLELIST</div>
+            <input 
+                type='text'
+                onChange={props.keywords}/>
 
-    inputChangeHandler = (event) => {  // arrow function lets us skip bind(this)
-        // console.log(event.target.value)
-        this.setState({
-            keywords: event.target.value
-        })
-    }
-
-    render(){
-        return (
-            <header>
-                <div className='logo' >BATTLELIST</div>
-                <input type='text' onChange={this.inputChangeHandler}/>
-
-            </header>
-        )
-    }
-
+        </header>
+    )
 }
+
+
 
 
 
